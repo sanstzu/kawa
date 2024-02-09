@@ -22,6 +22,14 @@ Since this is a personal project (and first experience using Rust on such a scal
 
 Please feel free to reach out to me at my email 📧: [claytonfernalo@gmail.com](mailto:claytonfernalo@gmail.com) or Discord 💬: san.s
 
+## To-Do 📝
+
+- [ ] README.md for both services.
+- [ ] Create Dockerfile for both services (currently for `kawa-ingest` only).
+- [ ] Create docker-compose file for both services.
+- [ ] Add tests.
+- [ ] Improve from 30 seconds latency.
+
 ## References 📚
 
 - [rust-media-libs](https://github.com/KallDrexx/rust-media-libs)
