@@ -1,0 +1,6 @@
+[submodule "kawa-ingest"]
+	path = kawa-ingest
+	url = https://github.com/sanstzu/kawa-ingest/
+[submodule "kawa-transcoder"]
+	path = kawa-transcoder
+	url = https://github.com/sanstzu/kawa-transcoder/
