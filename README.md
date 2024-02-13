@@ -4,7 +4,7 @@ Kawa (川) is a simple livestream application that consists of [`kawa-ingest �
 
 # Kawa-Ingest 🛤
 
-The ingest service is responsible for receiving RTMP streams. It is made using `rml-rtmp` and `tokio` for async handling of incoming streams. The output for each stream would be `[AWS_S3_OUT_URI]/out/[stream_key]`.
+The ingest service is responsible for receiving RTMP streams. It is made using `rml-rtmp` and `tokio` for async handling of incoming streams.
 
 The raw video and audio bytes is being used to extract NAL units and ADTS frames, which are then sent to the transcoder service through gRPC stream.
 
