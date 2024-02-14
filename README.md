@@ -29,6 +29,7 @@ Please feel free to reach out to me at my email 📧: [claytonfernalo@gmail.com]
 - [ ] Create docker-compose file for both services.
 - [ ] Add tests.
 - [ ] Improve from 30 seconds latency.
+- [ ] Create full-stack application.
 
 ## References 📚
 
