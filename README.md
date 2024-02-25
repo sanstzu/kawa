@@ -12,9 +12,9 @@ The raw video and audio bytes is being used to extract NAL units and ADTS frames
 
 # Kawa-Transcoder ⚙️
 
-The transcoder service employs `ffmpeg` to transcode the incoming gRPC stream to HLS format.
+The transcoder service employs `ffmpeg` to transcode the incoming gRPC stream to HLS format (MPEG-TS container).
 
-It also utilizes `aws-cli` to upload the transcoded media files to an S3 bucket that serves as a CDN for the HLS stream.
+It also utilizes `aws-cli` to upload the transcoded media files to an S3 bucket that serves as a CDN for the HLS stream. As for now, the stream will be published to `[AWS_S3_OUTPUT_URI]/[stream_key]`. For better practice, it would be better to have a key-value store to map a stream key to a particular publish path (e.g. Redis).
 
 ## Contact 📧
 
@@ -29,6 +29,7 @@ Please feel free to reach out to me at my email 📧: [claytonfernalo@gmail.com]
 - [ ] Create docker-compose file for both services.
 - [ ] Add tests.
 - [ ] Improve from 30 seconds latency.
+- [ ] Create full-stack application.
 
 ## References 📚
 
