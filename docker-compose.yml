@@ -22,6 +22,8 @@ services:
 
   kawa-ingest:
     build: ./kawa-ingest
+    ports:
+      - 1935:1935 # RTMP
     environment:
       - RUST_LOG=info
       - TRANSCODER_SERVICE_URL=kawa-transcoder:50051
