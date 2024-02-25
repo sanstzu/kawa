@@ -1,0 +1,31 @@
+services:
+  redis:
+    image: redis:alpine
+
+  kawa-transcoder:
+    build: ./kawa-transcoder
+    environment:
+      - RUST_LOG=info
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_S3_OUTPUT_URI=${AWS_S3_OUTPUT_URI}
+
+  kawa-session-manager:
+    build: ./kawa-session-manager
+    ports:
+      - 8888:8888 # Public Rest API
+    environment:
+      - RUST_LOG=info
+      - REDIS_URL=redis:6379
+    depends_on:
+      - redis
+
+  kawa-ingest:
+    build: ./kawa-ingest
+    environment:
+      - RUST_LOG=info
+      - TRANSCODER_SERVICE_URL=kawa-transcoder:50051
+      - SESSION_MANAGER_SERVICE_URL=kawa-session-manager:50051
+    depends_on:
+      - kawa-transcoder
+      - kawa-session-manager
