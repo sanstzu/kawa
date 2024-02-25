@@ -4,3 +4,6 @@
 [submodule "kawa-transcoder"]
 	path = kawa-transcoder
 	url = https://github.com/sanstzu/kawa-transcoder/
+[submodule "kawa-session-manager"]
+	path = kawa-session-manager
+	url = https://github.com/sanstzu/kawa-session-manager
