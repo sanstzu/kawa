@@ -1,12 +1,14 @@
 # Kawa 🏞️
 
-Kawa (川) is a simple livestream application that consists of [`kawa-ingest 🛤`](https://github.com/sanstzu/kawa-ingest) and [`kawa-transcoder ⚙️`](https://github.com/sanstzu/kawa-transcoder), fully written in Rust 🦀.
+Kawa (川) is a simple livestream application that consists of [`kawa-ingest 🛤`](https://github.com/sanstzu/kawa-ingest), [`kawa-transcoder ⚙️`](https://github.com/sanstzu/kawa-transcoder), and [`kawa-session-manager 📓`](https://github.com/sanstzu/kawa-session-manager) fully written in Rust 🦀.
 
 # Kawa-Ingest 🛤
 
 The ingest service is responsible for receiving RTMP streams. It is made using `rml-rtmp` and `tokio` for async handling of incoming streams.
 
 The raw video and audio bytes is being used to extract NAL units and ADTS frames, which are then sent to the transcoder service through gRPC stream.
+
+The session manager services can be interacted through REST API to generate stream keys that can be used for the ingest server. It uses Redis to store the list of valid stream keys and its corresponding output path. It also acts as a gRPC server to handle requests from the ingest service (verifying stream keys).
 
 > The ingest service is designed to be used with [OBS Studio](https://obsproject.com/), a popular open-source software for video recording and live streaming. As of now, it only supports `h264` and `aac` codec for video and audio respectively.
 
