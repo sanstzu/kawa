@@ -2,6 +2,8 @@
 
 Kawa (川) is a simple livestream application that consists of [`kawa-ingest 🛤`](https://github.com/sanstzu/kawa-ingest), [`kawa-transcoder ⚙️`](https://github.com/sanstzu/kawa-transcoder), and [`kawa-session-manager 📓`](https://github.com/sanstzu/kawa-session-manager) fully written in Rust 🦀.
 
+![test drawio (1)](https://github.com/sanstzu/kawa/assets/26087840/1f16cf85-b59c-4d46-855d-12546a91c383)
+
 # Kawa-Ingest 🛤
 
 The ingest service is responsible for receiving RTMP streams. It is made using `rml-rtmp` and `tokio` for async handling of incoming streams.
